@@ -88,7 +88,7 @@ namespace L91
                 }
                 else
                 {
-                    MessageBox.Show("Nooooo");
+                    MessageBox.Show("Cette connexion ne marche pas");
 
                 }
                 try
