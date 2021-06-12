@@ -30,12 +30,12 @@ namespace L91
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void materialCheckbox1_CheckedChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Authentification_Load(object sender, EventArgs e)
@@ -62,15 +62,62 @@ namespace L91
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = usernameTXT.Text;
-            string mdp = mdpTXT.Text;
+            if (usernameTXT.Text == null || mdpTXT.Text == null)
+            {
+                MessageBox.Show("Données vides");
+            }
+            else
+            {
+                string username = usernameTXT.Text;
+                string mdp = mdpTXT.Text;
+                string MySQLConectionString = "datasource = sql356.main-hosting.eu; port = 3306; username = u559094014_latitude91; password = Latitude91; database = u559094014_latitude91";
 
-            // Db connect
+                // Query
+                string query = "SELECT * FROM utilisateur WHERE user_name =" + usernameTXT.Text + " AND mdp = " + mdpTXT.Text + "";
 
-            MySqlConnection con = new MySqlConnection("server = ; user id = u559094014_latitude91	; database = u559094014_latitude91");
-            MySqlDataAdapter sda = new MySqlDataAdapter("");
+                // Db connect
+
+                MySqlConnection databaseconnection = new MySqlConnection(MySQLConectionString);
+                MySqlCommand commmandeDatabase = new MySqlCommand(query, databaseconnection);
+                commmandeDatabase.CommandTimeout = 60;
 
 
+                if (databaseconnection.State == ConnectionState.Open)
+                {
+                    MessageBox.Show("yesss"); ;
+                }
+                else
+                {
+                    MessageBox.Show("Nooooo");
+
+                }
+                try
+                {
+                    databaseconnection.Open();
+
+                    MySqlDataReader myReader = commmandeDatabase.ExecuteReader();
+
+                    if (myReader.HasRows)
+                    {
+                        MessageBox.Show("Exécuté avec succès");
+                        while (myReader.Read())
+                        {
+                            Console.WriteLine(myReader.GetString(0) + " - " + myReader.GetString(1) + " - " + myReader.GetString(2));
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Exécuté avec succès mais aucune ligne");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur :" + ex.Message);
+                }
+            }
+
+
+            /*
             if (usernameTXT.Text == "you")
             {
                 if (mdpTXT.Text == "mdp")
@@ -90,6 +137,12 @@ namespace L91
             {
 
             }
+            */
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
