@@ -84,7 +84,7 @@ namespace L91
 
                 if (databaseconnection.State == ConnectionState.Open)
                 {
-                    MessageBox.Show("La connexion est passée"); ;
+                    MessageBox.Show("La connexion est passée avec succes "); ;
                 }
                 else
                 {

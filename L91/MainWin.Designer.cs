@@ -30,24 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.accueilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nouveauFichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.mùToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ùmùToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ùmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accueilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nouveauFichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialContextMenuStrip2 = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.materialContextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -65,6 +65,32 @@
             this.menuStrip1.Size = new System.Drawing.Size(824, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // accueilToolStripMenuItem
+            // 
+            this.accueilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nouveauFichierToolStripMenuItem});
+            this.accueilToolStripMenuItem.Name = "accueilToolStripMenuItem";
+            this.accueilToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.accueilToolStripMenuItem.Text = "accueil";
+            // 
+            // nouveauFichierToolStripMenuItem
+            // 
+            this.nouveauFichierToolStripMenuItem.Name = "nouveauFichierToolStripMenuItem";
+            this.nouveauFichierToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.nouveauFichierToolStripMenuItem.Text = "nouveau fichier";
+            // 
+            // fichierToolStripMenuItem
+            // 
+            this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.fichierToolStripMenuItem.Text = "fichier";
+            // 
+            // aideToolStripMenuItem
+            // 
+            this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.aideToolStripMenuItem.Text = "aide";
             // 
             // materialContextMenuStrip1
             // 
@@ -96,32 +122,6 @@
             this.ùmToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.ùmToolStripMenuItem.Text = "ùm*";
             // 
-            // accueilToolStripMenuItem
-            // 
-            this.accueilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nouveauFichierToolStripMenuItem});
-            this.accueilToolStripMenuItem.Name = "accueilToolStripMenuItem";
-            this.accueilToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.accueilToolStripMenuItem.Text = "accueil";
-            // 
-            // fichierToolStripMenuItem
-            // 
-            this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.fichierToolStripMenuItem.Text = "fichier";
-            // 
-            // aideToolStripMenuItem
-            // 
-            this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.aideToolStripMenuItem.Text = "aide";
-            // 
-            // nouveauFichierToolStripMenuItem
-            // 
-            this.nouveauFichierToolStripMenuItem.Name = "nouveauFichierToolStripMenuItem";
-            this.nouveauFichierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nouveauFichierToolStripMenuItem.Text = "nouveau fichier";
-            // 
             // materialContextMenuStrip2
             // 
             this.materialContextMenuStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -149,22 +149,32 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(824, 451);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // textBox1
+            // tableLayoutPanel2
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Location = new System.Drawing.Point(301, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(520, 20);
-            this.textBox1.TabIndex = 11;
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.5F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.5F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tableLayoutPanel2.Controls.Add(this.button3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button2, 2, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(292, 39);
+            this.tableLayoutPanel2.TabIndex = 11;
             // 
-            // button2
+            // button3
             // 
-            this.button2.Location = new System.Drawing.Point(196, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Suivant";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(3, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Initialize";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button1
             // 
@@ -175,25 +185,14 @@
             this.button1.Text = "Précédent";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button2
             // 
-            this.button3.Location = new System.Drawing.Point(3, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Initialize";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(301, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(520, 18);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Dossier Lattitude Partagé";
+            this.button2.Location = new System.Drawing.Point(195, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Suivant";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // webBrowser2
             // 
@@ -205,22 +204,24 @@
             this.webBrowser2.TabIndex = 12;
             this.webBrowser2.Url = new System.Uri("C:\\Users\\DELL LATITUDE\\Downloads\\Jamilyse", System.UriKind.Absolute);
             // 
-            // tableLayoutPanel2
+            // textBox1
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanel2.Controls.Add(this.button3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 2, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(292, 39);
-            this.tableLayoutPanel2.TabIndex = 11;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox1.Location = new System.Drawing.Point(301, 48);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(520, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(301, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(520, 18);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Dossier Lattitude Partagé";
             // 
             // MainWin
             // 
