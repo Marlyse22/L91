@@ -49,7 +49,7 @@ namespace L91
                 {
                     MessageBox.Show("Bienvenue et Bonjour " + dt.Rows[0].Field<string>("prenom") + "!");
                     visibleAll(false);
-                    UserForm mn = new UserForm();
+                    Accueil mn = new Accueil();
                     mn.Show();
                     this.Hide();
 
