@@ -42,17 +42,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.valider = new System.Windows.Forms.Button();
+            this.ajouter = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.supprimer = new System.Windows.Forms.Button();
             this.Modifier = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.afficher = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -188,16 +188,17 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // valider
+            // ajouter
             // 
-            this.valider.BackColor = System.Drawing.Color.White;
-            this.valider.ForeColor = System.Drawing.Color.Maroon;
-            this.valider.Location = new System.Drawing.Point(6, 19);
-            this.valider.Name = "valider";
-            this.valider.Size = new System.Drawing.Size(114, 27);
-            this.valider.TabIndex = 7;
-            this.valider.Text = "Ajouter";
-            this.valider.UseVisualStyleBackColor = false;
+            this.ajouter.BackColor = System.Drawing.Color.White;
+            this.ajouter.ForeColor = System.Drawing.Color.Maroon;
+            this.ajouter.Location = new System.Drawing.Point(6, 19);
+            this.ajouter.Name = "ajouter";
+            this.ajouter.Size = new System.Drawing.Size(114, 27);
+            this.ajouter.TabIndex = 7;
+            this.ajouter.Text = "Ajouter";
+            this.ajouter.UseVisualStyleBackColor = false;
+            this.ajouter.Click += new System.EventHandler(this.ajouter_Click);
             // 
             // groupBox2
             // 
@@ -208,6 +209,14 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Liste des utilisateurs";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(441, 268);
+            this.dataGridView1.TabIndex = 0;
             // 
             // supprimer
             // 
@@ -230,11 +239,12 @@
             this.Modifier.TabIndex = 10;
             this.Modifier.Text = "Modifier";
             this.Modifier.UseVisualStyleBackColor = false;
+            this.Modifier.Click += new System.EventHandler(this.Modifier_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.afficher);
-            this.groupBox3.Controls.Add(this.valider);
+            this.groupBox3.Controls.Add(this.ajouter);
             this.groupBox3.Controls.Add(this.Modifier);
             this.groupBox3.Controls.Add(this.supprimer);
             this.groupBox3.Location = new System.Drawing.Point(12, 338);
@@ -254,14 +264,7 @@
             this.afficher.TabIndex = 11;
             this.afficher.Text = "Afficher";
             this.afficher.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(441, 268);
-            this.dataGridView1.TabIndex = 0;
+            this.afficher.Click += new System.EventHandler(this.afficher_Click);
             // 
             // UserForm
             // 
@@ -276,8 +279,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -295,7 +298,7 @@
         private System.Windows.Forms.TextBox usernameTb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button valider;
+        private System.Windows.Forms.Button ajouter;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ListBox roleLb;
         private System.Windows.Forms.GroupBox groupBox2;
