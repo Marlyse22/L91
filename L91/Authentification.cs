@@ -47,7 +47,7 @@ namespace L91
                 maxrow = dt.Rows.Count;
                 if (maxrow > 0)
                 {
-                    MessageBox.Show("Bienvenue et Bonjour " + dt.Rows[0].Field<string>("prenom"));
+                    MessageBox.Show("Bienvenue et Bonjour " + dt.Rows[0].Field<string>("prenom") + "!");
                     visibleAll(false);
                     MainWin mn = new MainWin();
                     mn.Show();
