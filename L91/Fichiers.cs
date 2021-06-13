@@ -38,11 +38,6 @@ namespace L91
             
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -81,17 +76,52 @@ namespace L91
 
         private void panel5_Click(object sender, EventArgs e)
         {
-            this.Hide();
+           
             Fichiers F = new Fichiers();
-            F.Show();
+            F.Show(); this.Hide();
         }
 
         private void home_panel2_Click(object sender, EventArgs e)
         {
 
-            this.Hide();
+           
             Accueil F = new Accueil();
-            F.Show();
+            F.Show(); this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            
+            Accueil F = new Accueil();
+            F.Show();this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+           
+            Mesinfos F = new Mesinfos();
+            F.Show(); this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
+            UserForm F = new UserForm();
+            F.Show();this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+           
+            Fichiers F = new Fichiers();
+            F.Show(); this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+           
+            Apropos F = new Apropos();
+            F.Show(); this.Hide();
         }
     }
 }

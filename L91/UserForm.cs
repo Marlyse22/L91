@@ -95,5 +95,40 @@ namespace L91
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+           
+            Accueil F = new Accueil();
+            F.Show(); this.Hide();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            
+            Fichiers F = new Fichiers();
+            F.Show();this.Hide();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+           
+            UserForm F = new UserForm();
+            F.Show(); this.Hide();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            
+            Mesinfos F = new Mesinfos();
+            F.Show();this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            
+            Apropos F = new Apropos();
+            F.Show();this.Hide();
+        }
     }
 }
