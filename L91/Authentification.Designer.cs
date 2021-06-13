@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Authentification));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.usernameTXT = new System.Windows.Forms.TextBox();
-            this.mdpTXT = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.mdpTXT = new System.Windows.Forms.TextBox();
+            this.usernameTXT = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.valider = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             this.groupBox1.Controls.Add(this.usernameTXT);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.valider);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -60,37 +60,28 @@
             this.groupBox1.Text = "Authentification";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // checkBox1
+            // label3
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(127, 119);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(134, 20);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Afficher / Masquer";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(127, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Informations erronées";
             // 
-            // button1
+            // mdpTXT
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.ForeColor = System.Drawing.Color.Maroon;
-            this.button1.Location = new System.Drawing.Point(127, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Valider";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.mdpTXT.Location = new System.Drawing.Point(127, 83);
+            this.mdpTXT.Name = "mdpTXT";
+            this.mdpTXT.Size = new System.Drawing.Size(157, 22);
+            this.mdpTXT.TabIndex = 5;
             // 
-            // label1
+            // usernameTXT
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nom d\'utilisateur :";
+            this.usernameTXT.Location = new System.Drawing.Point(127, 51);
+            this.usernameTXT.Name = "usernameTXT";
+            this.usernameTXT.Size = new System.Drawing.Size(157, 22);
+            this.usernameTXT.TabIndex = 4;
             // 
             // label2
             // 
@@ -101,28 +92,37 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Mot de passe :";
             // 
-            // usernameTXT
+            // label1
             // 
-            this.usernameTXT.Location = new System.Drawing.Point(127, 51);
-            this.usernameTXT.Name = "usernameTXT";
-            this.usernameTXT.Size = new System.Drawing.Size(157, 22);
-            this.usernameTXT.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nom d\'utilisateur :";
             // 
-            // mdpTXT
+            // valider
             // 
-            this.mdpTXT.Location = new System.Drawing.Point(127, 83);
-            this.mdpTXT.Name = "mdpTXT";
-            this.mdpTXT.Size = new System.Drawing.Size(157, 22);
-            this.mdpTXT.TabIndex = 5;
+            this.valider.BackColor = System.Drawing.Color.White;
+            this.valider.ForeColor = System.Drawing.Color.Maroon;
+            this.valider.Location = new System.Drawing.Point(127, 145);
+            this.valider.Name = "valider";
+            this.valider.Size = new System.Drawing.Size(75, 23);
+            this.valider.TabIndex = 1;
+            this.valider.Text = "Valider";
+            this.valider.UseVisualStyleBackColor = false;
+            this.valider.Click += new System.EventHandler(this.valider_Click);
             // 
-            // label3
+            // checkBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(127, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Informations erronées";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(127, 119);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(134, 20);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Afficher / Masquer";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Authentification
             // 
@@ -149,7 +149,7 @@
         private System.Windows.Forms.TextBox usernameTXT;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button valider;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label3;
     }

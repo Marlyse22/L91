@@ -17,6 +17,74 @@ namespace L91
         {
             InitializeComponent();
         }
+        MySqlConnection con = new MySqlConnection("server=sql356.main-hosting.eu; port = 3306;user id=u559094014_latitude91;password=;database=u559094014_latitude91;sslMode=none");
+        MySqlCommand cmd;
+        MySqlDataAdapter da;
+        DataTable dt;
+        string sql;
+        int maxrow;
+
+
+        private void doLogIn()
+        {
+            try
+            {
+                sql = "SELECT * FROM `utilisateur` WHERE `user_name`='" + usernameTXT.Text + "'  AND `mdp`='" + mdpTXT.Text + "'";
+                con.Open();
+                cmd = new MySqlCommand
+                {
+                    Connection = con,
+                    CommandText = sql
+                };
+                da = new MySqlDataAdapter
+                {
+                    SelectCommand = cmd
+                };
+                dt = new DataTable();
+                da.Fill(dt);
+
+
+                maxrow = dt.Rows.Count;
+                if (maxrow > 0)
+                {
+                    MessageBox.Show("Bienvenue " + dt.Rows[0].Field<string>("role") + "Bonjour, " + dt.Rows[0].Field<string>("prenom"));
+                    
+                    visibleAll(false);
+                    MainWin mn = new MainWin();
+                    mn.Show();
+                    this.Hide();
+
+                }
+                else
+                {
+                    MessageBox.Show("Ce compte n'existe pas ! Veuillez contacter l'administrateur ");
+                    usernameTXT.Focus();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+                da.Dispose();
+
+            }
+        }
+        private void visibleAll(Boolean result)
+        {
+            
+            valider.Visible = result;
+            mdpTXT.Visible = result;
+            usernameTXT.Visible = result;
+            label1.Visible = result;
+            label2.Visible = result;
+            mdpTXT.Clear();
+            usernameTXT.Clear();
+            usernameTXT.Focus();
+        }
 
         private void validatBtn_Click(object sender, EventArgs e)
         {
@@ -40,6 +108,7 @@ namespace L91
 
         private void Authentification_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = valider;
             label3.Visible = false;
         }
 
@@ -60,89 +129,15 @@ namespace L91
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (usernameTXT.Text == null || mdpTXT.Text == null)
-            {
-                MessageBox.Show("Données vides");
-            }
-            else
-            {
-                string username = usernameTXT.Text;
-                string mdp = mdpTXT.Text;
-                string MySQLConectionString = "datasource = sql356.main-hosting.eu; port = 3306; username = u559094014_latitude91; password = Latitude91; database = u559094014_latitude91";
-
-                // Query
-                string query = "SELECT * FROM utilisateur WHERE user_name =" + usernameTXT.Text + " AND mdp = " + mdpTXT.Text + "";
-
-                // Db connect
-
-                MySqlConnection databaseconnection = new MySqlConnection(MySQLConectionString);
-                MySqlCommand commmandeDatabase = new MySqlCommand(query, databaseconnection);
-                commmandeDatabase.CommandTimeout = 60;
-
-
-                if (databaseconnection.State == ConnectionState.Open)
-                {
-                    MessageBox.Show("La connexion est passée avec succes "); ;
-                }
-                else
-                {
-                    MessageBox.Show("Cette connexion ne marche pas");
-
-                }
-                try
-                {
-                    databaseconnection.Open();
-
-                    MySqlDataReader myReader = commmandeDatabase.ExecuteReader();
-
-                    if (myReader.HasRows)
-                    {
-                        MessageBox.Show("Exécuté avec succès");
-                        while (myReader.Read())
-                        {
-                            Console.WriteLine(myReader.GetString(0) + " - " + myReader.GetString(1) + " - " + myReader.GetString(2));
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Exécuté avec succès mais aucune ligne");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erreur :" + ex.Message);
-                }
-            }
-
-
-            /*
-            if (usernameTXT.Text == "you")
-            {
-                if (mdpTXT.Text == "mdp")
-                {
-                    MainWin mw = new MainWin();
-                    mw.Show();
-                    this.Hide();
-
-                }
-                else
-                {
-                    label3.Visible = true;
-
-                }
-            }
-            else
-            {
-
-            }
-            */
-        }
 
         private void label4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void valider_Click(object sender, EventArgs e)
+        {
+            doLogIn();
         }
     }
 }
