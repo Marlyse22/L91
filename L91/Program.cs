@@ -16,7 +16,7 @@ namespace L91
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Splashscreen());
+            Application.Run(new Accueil());
         }
     }
 }

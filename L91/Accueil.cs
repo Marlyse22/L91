@@ -19,14 +19,45 @@ namespace L91
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            this.Hide();
-            MainWin MainWin = new MainWin();
-            MainWin.Show();
+            
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void home_panel2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Accueil F = new Accueil();
+            F.Show();
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fichiers F = new Fichiers();
+            F.Show();
+        }
+
+        private void panel2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fichiers F = new Fichiers();
+            F.Show();
+        }
+
+        private void main_panel2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fichiers F = new Fichiers();
+            F.Show();
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace L91
 {
-    public partial class MainWin : Form
+    public partial class Fichiers : Form
     {
-        public MainWin()
+        public Fichiers()
         {
             InitializeComponent(); 
         }
@@ -34,7 +34,7 @@ namespace L91
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+             
             
         }
 
@@ -77,6 +77,21 @@ namespace L91
         private void button3_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("hey");
+        }
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fichiers F = new Fichiers();
+            F.Show();
+        }
+
+        private void home_panel2_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            Accueil F = new Accueil();
+            F.Show();
         }
     }
 }
