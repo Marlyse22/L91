@@ -17,7 +17,7 @@ namespace L91
         {
             InitializeComponent();
         }
-        MySqlConnection con = new MySqlConnection("server=sql356.main-hosting.eu; port = 3306;user id=u559094014_latitude91;password=;database=u559094014_latitude91;sslMode=none");
+        MySqlConnection con = new MySqlConnection("server=sql356.main-hosting.eu; port = 3306;user id=u559094014_latitude91;password=Latitude91;database=u559094014_latitude91;sslMode=none");
         MySqlCommand cmd;
         MySqlDataAdapter da;
         DataTable dt;
@@ -47,8 +47,7 @@ namespace L91
                 maxrow = dt.Rows.Count;
                 if (maxrow > 0)
                 {
-                    MessageBox.Show("Bienvenue " + dt.Rows[0].Field<string>("role") + "Bonjour, " + dt.Rows[0].Field<string>("prenom"));
-                    
+                    MessageBox.Show("Bienvenue et Bonjour " + dt.Rows[0].Field<string>("prenom"));
                     visibleAll(false);
                     MainWin mn = new MainWin();
                     mn.Show();
