@@ -177,7 +177,7 @@ namespace L91
                 da.Fill(dt);
 
                 dataGridView1.DataSource = dt; // here i have assign dTable object to the dataGridView1 object to display data.               
-
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -207,6 +207,29 @@ namespace L91
                 {
                 }
                 con.Close();
+                try
+                {
+                    sql = "SELECT * FROM `utilisateur`";
+                    con.Open();
+                    cmd = new MySqlCommand
+                    {
+                        Connection = con,
+                        CommandText = sql
+                    };
+                    da = new MySqlDataAdapter
+                    {
+                        SelectCommand = cmd
+                    };
+                    dt = new DataTable();
+                    da.Fill(dt);
+
+                    dataGridView1.DataSource = dt; // here i have assign dTable object to the dataGridView1 object to display data.               
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             catch (Exception ex)
             {
