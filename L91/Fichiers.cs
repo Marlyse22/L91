@@ -123,5 +123,10 @@ namespace L91
             Apropos F = new Apropos();
             F.Show(); this.Hide();
         }
+
+        private void webBrowser2_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
     }
 }

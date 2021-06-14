@@ -140,6 +140,7 @@
             this.webBrowser2.Size = new System.Drawing.Size(792, 472);
             this.webBrowser2.TabIndex = 16;
             this.webBrowser2.Url = new System.Uri("C:\\Users\\DELL LATITUDE\\Downloads\\Jamilyse", System.UriKind.Absolute);
+            this.webBrowser2.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser2_DocumentCompleted);
             // 
             // textBox1
             // 
