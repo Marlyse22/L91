@@ -16,10 +16,10 @@ namespace L91
         {
             InitializeComponent(); 
         }
-        private string url = "";
+        //private string url = "";
         private void button1_Click(object sender, EventArgs e)
         {
-            webBrowser2.GoBack();
+            webBrowser2.GoBack(); 
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -126,7 +126,12 @@ namespace L91
 
         private void webBrowser2_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+              
+        }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }
