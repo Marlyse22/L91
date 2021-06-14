@@ -126,7 +126,7 @@ namespace L91
 
         private void webBrowser2_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-
+              
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
