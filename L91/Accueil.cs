@@ -94,5 +94,58 @@ namespace L91
             F.Show();this.Hide();
             
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Fichiers F = new Fichiers();
+            F.Show(); this.Hide();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            UserForm F = new UserForm();
+            F.Show(); this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Mesinfos F = new Mesinfos();
+            F.Show(); this.Hide();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Apropos F = new Apropos();
+            F.Show(); this.Hide();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            Fichiers F = new Fichiers();
+            F.Show(); this.Hide();
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            UserForm F = new UserForm();
+            F.Show(); this.Hide();
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            Mesinfos F = new Mesinfos();
+            F.Show(); this.Hide();
+        }
+
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+            Apropos F = new Apropos();
+            F.Show(); this.Hide();
+        }
     }
 }

@@ -67,24 +67,26 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(200, 42);
+            this.panel1.Location = new System.Drawing.Point(192, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(602, 559);
+            this.panel1.Size = new System.Drawing.Size(841, 559);
             this.panel1.TabIndex = 0;
             // 
             // afficher
             // 
             this.afficher.BackColor = System.Drawing.Color.White;
             this.afficher.ForeColor = System.Drawing.Color.Maroon;
-            this.afficher.Location = new System.Drawing.Point(153, 65);
+            this.afficher.Location = new System.Drawing.Point(156, 77);
             this.afficher.Name = "afficher";
             this.afficher.Size = new System.Drawing.Size(114, 29);
             this.afficher.TabIndex = 11;
             this.afficher.Text = "Afficher";
             this.afficher.UseVisualStyleBackColor = false;
+            this.afficher.Click += new System.EventHandler(this.afficher_Click_1);
             // 
             // roleLb
             // 
@@ -165,7 +167,7 @@
             // 
             this.Modifier.BackColor = System.Drawing.Color.White;
             this.Modifier.ForeColor = System.Drawing.Color.Maroon;
-            this.Modifier.Location = new System.Drawing.Point(6, 65);
+            this.Modifier.Location = new System.Drawing.Point(9, 77);
             this.Modifier.Name = "Modifier";
             this.Modifier.Size = new System.Drawing.Size(114, 29);
             this.Modifier.TabIndex = 10;
@@ -176,7 +178,7 @@
             // 
             this.supprimer.BackColor = System.Drawing.Color.White;
             this.supprimer.ForeColor = System.Drawing.Color.Maroon;
-            this.supprimer.Location = new System.Drawing.Point(153, 19);
+            this.supprimer.Location = new System.Drawing.Point(156, 31);
             this.supprimer.Name = "supprimer";
             this.supprimer.Size = new System.Drawing.Size(114, 27);
             this.supprimer.TabIndex = 9;
@@ -188,7 +190,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(441, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(470, 470);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox2
@@ -196,7 +198,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(336, 22);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(453, 293);
+            this.groupBox2.Size = new System.Drawing.Size(482, 495);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Liste des utilisateurs";
@@ -244,7 +246,7 @@
             this.groupBox3.Controls.Add(this.supprimer);
             this.groupBox3.Location = new System.Drawing.Point(13, 337);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(273, 100);
+            this.groupBox3.Size = new System.Drawing.Size(317, 124);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Choix";
@@ -253,12 +255,13 @@
             // 
             this.ajouter.BackColor = System.Drawing.Color.White;
             this.ajouter.ForeColor = System.Drawing.Color.Maroon;
-            this.ajouter.Location = new System.Drawing.Point(6, 19);
+            this.ajouter.Location = new System.Drawing.Point(9, 31);
             this.ajouter.Name = "ajouter";
             this.ajouter.Size = new System.Drawing.Size(114, 27);
             this.ajouter.TabIndex = 7;
             this.ajouter.Text = "Ajouter";
             this.ajouter.UseVisualStyleBackColor = false;
+            this.ajouter.Click += new System.EventHandler(this.ajouter_Click_1);
             // 
             // groupBox1
             // 
@@ -372,6 +375,7 @@
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserForm";
+            this.Load += new System.EventHandler(this.UserForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

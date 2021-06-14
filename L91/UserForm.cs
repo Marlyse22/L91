@@ -130,5 +130,88 @@ namespace L91
             Apropos F = new Apropos();
             F.Show();this.Hide();
         }
+
+        private void afficher_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                sql = "SELECT * FROM `utilisateur`";
+                con.Open();
+                cmd = new MySqlCommand
+                {
+                    Connection = con,
+                    CommandText = sql
+                };
+                da = new MySqlDataAdapter
+                {
+                    SelectCommand = cmd
+                };
+                dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt; // here i have assign dTable object to the dataGridView1 object to display data.               
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void UserForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                sql = "SELECT * FROM `utilisateur`";
+                con.Open();
+                cmd = new MySqlCommand
+                {
+                    Connection = con,
+                    CommandText = sql
+                };
+                da = new MySqlDataAdapter
+                {
+                    SelectCommand = cmd
+                };
+                dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt; // here i have assign dTable object to the dataGridView1 object to display data.               
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ajouter_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                //This is my insert query in which i am taking input from the user through windows forms 
+                sql = "INSERT INTO `utilisateur`(user_name, mdp, nom, prenom, email, role) values ('" + this.usernameTb.Text + "','" + this.mdpTb.Text + "','" + this.nomTB.Text + "','" + this.prenomTB.Text + "','" + this.emailTb.Text + "','" + this.roleLb.Text + "' );";
+
+                //This is command class which will handle the query and connection object.  
+                cmd = new MySqlCommand
+                {
+                    Connection = con,
+                    CommandText = sql
+                };
+                MySqlDataReader MyReader2;
+                con.Open();
+                MyReader2 = cmd.ExecuteReader();   // Here our query will be executed and data saved into the database.  
+
+                MessageBox.Show("Utilisateur enregistrer avec succes");
+                while (MyReader2.Read())
+                {
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
