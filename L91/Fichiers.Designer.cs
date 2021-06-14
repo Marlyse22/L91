@@ -52,6 +52,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(836, 594);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -146,7 +147,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(198, 15);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(399, 20);
+            this.textBox1.Size = new System.Drawing.Size(191, 20);
             this.textBox1.TabIndex = 15;
             // 
             // label2
