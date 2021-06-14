@@ -36,12 +36,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbrole = new System.Windows.Forms.TextBox();
+            this.tbnom = new System.Windows.Forms.TextBox();
+            this.tbprenom = new System.Windows.Forms.TextBox();
+            this.tbemail = new System.Windows.Forms.TextBox();
+            this.tbusername = new System.Windows.Forms.TextBox();
+            this.tbmdp = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -128,6 +134,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.tbmdp);
+            this.panel2.Controls.Add(this.tbusername);
+            this.panel2.Controls.Add(this.tbemail);
+            this.panel2.Controls.Add(this.tbprenom);
+            this.panel2.Controls.Add(this.tbnom);
+            this.panel2.Controls.Add(this.tbrole);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
@@ -138,66 +150,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(831, 439);
             this.panel2.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(25, 90);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "NOM :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(25, 150);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "PRENOM :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Maroon;
-            this.label8.Location = new System.Drawing.Point(25, 208);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 20);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "EMAIL :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Maroon;
-            this.label9.Location = new System.Drawing.Point(25, 261);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(178, 20);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "NOM D\'UTILISATEUR :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Maroon;
-            this.label10.Location = new System.Drawing.Point(25, 313);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(136, 20);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "MOT DE PASSE :";
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label11
             // 
@@ -211,6 +164,108 @@
             this.label11.TabIndex = 10;
             this.label11.Text = "PROFIL :";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Maroon;
+            this.label10.Location = new System.Drawing.Point(25, 313);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(136, 20);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "MOT DE PASSE :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.Location = new System.Drawing.Point(25, 261);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(178, 20);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "NOM D\'UTILISATEUR :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Maroon;
+            this.label8.Location = new System.Drawing.Point(25, 208);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "EMAIL :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
+            this.label7.Location = new System.Drawing.Point(25, 150);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "PRENOM :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
+            this.label6.Location = new System.Drawing.Point(25, 92);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "NOM :";
+            // 
+            // tbrole
+            // 
+            this.tbrole.Location = new System.Drawing.Point(218, 49);
+            this.tbrole.Name = "tbrole";
+            this.tbrole.Size = new System.Drawing.Size(248, 20);
+            this.tbrole.TabIndex = 11;
+            // 
+            // tbnom
+            // 
+            this.tbnom.Location = new System.Drawing.Point(218, 92);
+            this.tbnom.Name = "tbnom";
+            this.tbnom.Size = new System.Drawing.Size(248, 20);
+            this.tbnom.TabIndex = 12;
+            // 
+            // tbprenom
+            // 
+            this.tbprenom.Location = new System.Drawing.Point(218, 152);
+            this.tbprenom.Name = "tbprenom";
+            this.tbprenom.Size = new System.Drawing.Size(248, 20);
+            this.tbprenom.TabIndex = 13;
+            // 
+            // tbemail
+            // 
+            this.tbemail.Location = new System.Drawing.Point(218, 203);
+            this.tbemail.Name = "tbemail";
+            this.tbemail.Size = new System.Drawing.Size(248, 20);
+            this.tbemail.TabIndex = 14;
+            // 
+            // tbusername
+            // 
+            this.tbusername.Location = new System.Drawing.Point(218, 261);
+            this.tbusername.Name = "tbusername";
+            this.tbusername.Size = new System.Drawing.Size(248, 20);
+            this.tbusername.TabIndex = 15;
+            // 
+            // tbmdp
+            // 
+            this.tbmdp.Location = new System.Drawing.Point(218, 315);
+            this.tbmdp.Name = "tbmdp";
+            this.tbmdp.Size = new System.Drawing.Size(248, 20);
+            this.tbmdp.TabIndex = 16;
+            // 
             // Mesinfos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +277,7 @@
             this.Name = "Mesinfos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mesinfos";
+            this.Load += new System.EventHandler(this.Mesinfos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -245,5 +301,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbmdp;
+        private System.Windows.Forms.TextBox tbusername;
+        private System.Windows.Forms.TextBox tbemail;
+        private System.Windows.Forms.TextBox tbprenom;
+        private System.Windows.Forms.TextBox tbnom;
+        private System.Windows.Forms.TextBox tbrole;
     }
 }
