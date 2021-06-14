@@ -85,11 +85,11 @@ namespace L91
                 {
 
                     tbnom.Text = dt.Rows[0].Field<string>("nom");
-                    tbprenom.Text = dt.Rows[0].Field<string>("prenom");
-                    tbmdp.Text = dt.Rows[0].Field<string>("mdp");
-                    tbemail.Text = dt.Rows[0].Field<string>("email");
-                    tbusername.Text = dt.Rows[0].Field<string>("user_name");
-                    tbrole.Text = dt.Rows[0].Field<string>("role");
+                    tbprenom.Text = dt.Rows[1].Field<string>("prenom");
+                    tbmdp.Text = dt.Rows[2].Field<string>("mdp");
+                    tbemail.Text = dt.Rows[3].Field<string>("email");
+                    tbusername.Text = dt.Rows[4].Field<string>("user_name");
+                    tbrole.Text = dt.Rows[5].Field<string>("role");
                 }
                 con.Close();
             }
