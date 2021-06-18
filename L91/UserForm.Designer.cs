@@ -156,6 +156,7 @@
             this.supprimer.TabIndex = 9;
             this.supprimer.Text = "Supprimer";
             this.supprimer.UseVisualStyleBackColor = false;
+            this.supprimer.Click += new System.EventHandler(this.supprimer_Click);
             // 
             // groupBox1
             // 

@@ -20,11 +20,8 @@ namespace L91
         MySqlConnection con = new MySqlConnection("server=sql356.main-hosting.eu; port = 3306;user id=u559094014_latitude91;password=Latitude91;database=u559094014_latitude91;sslMode=none");
         MySqlCommand cmd;
         MySqlDataAdapter da;
-        MySqlDataReader dr;
        
-        DataTable dt;
         string sql;
-        int maxrow;
         private void label1_Click(object sender, EventArgs e)
         {
             Accueil F = new Accueil();
@@ -69,7 +66,7 @@ namespace L91
         {
             try
             {
-                sql = "SELECT * FROM `utilisateur` WHERE 'ID'= 1";
+                sql = "SELECT * FROM `utilisateur` WHERE id= 1";
                 
                 cmd = new MySqlCommand
                 {
@@ -85,18 +82,34 @@ namespace L91
                 if (dr.Read())
                 {
              
-                    tbnom.Text = (dr["nom"].ToString());
-                    tbprenom.Text = (dr["prenom"].ToString());
-                    tbmdp.Text = (dr["mdp"].ToString());
-                    tbemail.Text = (dr["email"].ToString());
-                    tbusername.Text = (dr["user_name"].ToString());
-                    tbrole.Text = (dr["role"].ToString());
+                    tbnom.Text = dr.GetString("nom");
+                    tbprenom.Text = dr.GetString("prenom");
+                    tbmdp.Text = dr.GetString("mdp");
+                    tbemail.Text = dr.GetString("email");
+                    tbusername.Text = dr.GetString("user_name");
+                    tbrole.Text = dr.GetString("role");
+                }
+                else
+                {
+                    MessageBox.Show("No data for this ID");
                 }
                 con.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                tbmdp.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                tbmdp.UseSystemPasswordChar = true;
             }
         }
     }

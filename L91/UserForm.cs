@@ -204,5 +204,10 @@ namespace L91
                 
             }
         }
+
+        private void supprimer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

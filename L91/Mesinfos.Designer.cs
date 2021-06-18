@@ -36,18 +36,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbmdp = new System.Windows.Forms.TextBox();
+            this.tbusername = new System.Windows.Forms.TextBox();
+            this.tbemail = new System.Windows.Forms.TextBox();
+            this.tbnom = new System.Windows.Forms.TextBox();
+            this.tbrole = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbrole = new System.Windows.Forms.TextBox();
-            this.tbnom = new System.Windows.Forms.TextBox();
             this.tbprenom = new System.Windows.Forms.TextBox();
-            this.tbemail = new System.Windows.Forms.TextBox();
-            this.tbusername = new System.Windows.Forms.TextBox();
-            this.tbmdp = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -134,23 +135,59 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.tbprenom);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.tbmdp);
             this.panel2.Controls.Add(this.tbusername);
             this.panel2.Controls.Add(this.tbemail);
-            this.panel2.Controls.Add(this.tbprenom);
             this.panel2.Controls.Add(this.tbnom);
             this.panel2.Controls.Add(this.tbrole);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(192, 66);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(831, 439);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // tbmdp
+            // 
+            this.tbmdp.Location = new System.Drawing.Point(218, 315);
+            this.tbmdp.Name = "tbmdp";
+            this.tbmdp.Size = new System.Drawing.Size(248, 20);
+            this.tbmdp.TabIndex = 16;
+            // 
+            // tbusername
+            // 
+            this.tbusername.Location = new System.Drawing.Point(218, 261);
+            this.tbusername.Name = "tbusername";
+            this.tbusername.Size = new System.Drawing.Size(248, 20);
+            this.tbusername.TabIndex = 15;
+            // 
+            // tbemail
+            // 
+            this.tbemail.Location = new System.Drawing.Point(218, 203);
+            this.tbemail.Name = "tbemail";
+            this.tbemail.Size = new System.Drawing.Size(248, 20);
+            this.tbemail.TabIndex = 14;
+            // 
+            // tbnom
+            // 
+            this.tbnom.Location = new System.Drawing.Point(218, 149);
+            this.tbnom.Name = "tbnom";
+            this.tbnom.Size = new System.Drawing.Size(248, 20);
+            this.tbnom.TabIndex = 12;
+            // 
+            // tbrole
+            // 
+            this.tbrole.Location = new System.Drawing.Point(218, 49);
+            this.tbrole.Name = "tbrole";
+            this.tbrole.Size = new System.Drawing.Size(248, 20);
+            this.tbrole.TabIndex = 11;
             // 
             // label11
             // 
@@ -200,71 +237,47 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "EMAIL :";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(25, 150);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "PRENOM :";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(25, 92);
+            this.label6.Location = new System.Drawing.Point(25, 149);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "NOM :";
             // 
-            // tbrole
-            // 
-            this.tbrole.Location = new System.Drawing.Point(218, 49);
-            this.tbrole.Name = "tbrole";
-            this.tbrole.Size = new System.Drawing.Size(248, 20);
-            this.tbrole.TabIndex = 11;
-            // 
-            // tbnom
-            // 
-            this.tbnom.Location = new System.Drawing.Point(218, 92);
-            this.tbnom.Name = "tbnom";
-            this.tbnom.Size = new System.Drawing.Size(248, 20);
-            this.tbnom.TabIndex = 12;
-            // 
             // tbprenom
             // 
-            this.tbprenom.Location = new System.Drawing.Point(218, 152);
+            this.tbprenom.Location = new System.Drawing.Point(218, 101);
             this.tbprenom.Name = "tbprenom";
             this.tbprenom.Size = new System.Drawing.Size(248, 20);
-            this.tbprenom.TabIndex = 13;
+            this.tbprenom.TabIndex = 18;
             // 
-            // tbemail
+            // label7
             // 
-            this.tbemail.Location = new System.Drawing.Point(218, 203);
-            this.tbemail.Name = "tbemail";
-            this.tbemail.Size = new System.Drawing.Size(248, 20);
-            this.tbemail.TabIndex = 14;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
+            this.label7.Location = new System.Drawing.Point(25, 99);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 20);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "PRENOM :";
             // 
-            // tbusername
+            // checkBox1
             // 
-            this.tbusername.Location = new System.Drawing.Point(218, 261);
-            this.tbusername.Name = "tbusername";
-            this.tbusername.Size = new System.Drawing.Size(248, 20);
-            this.tbusername.TabIndex = 15;
-            // 
-            // tbmdp
-            // 
-            this.tbmdp.Location = new System.Drawing.Point(218, 315);
-            this.tbmdp.Name = "tbmdp";
-            this.tbmdp.Size = new System.Drawing.Size(248, 20);
-            this.tbmdp.TabIndex = 16;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(218, 352);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(114, 17);
+            this.checkBox1.TabIndex = 28;
+            this.checkBox1.Text = "Afficher / Masquer";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Mesinfos
             // 
@@ -299,13 +312,14 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbmdp;
         private System.Windows.Forms.TextBox tbusername;
         private System.Windows.Forms.TextBox tbemail;
-        private System.Windows.Forms.TextBox tbprenom;
         private System.Windows.Forms.TextBox tbnom;
         private System.Windows.Forms.TextBox tbrole;
+        private System.Windows.Forms.TextBox tbprenom;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
