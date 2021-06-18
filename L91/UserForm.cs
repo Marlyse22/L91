@@ -40,7 +40,7 @@ namespace L91
             try
             {
                 //This is my insert query in which i am taking input from the user through windows forms 
-                sql = "INSERT INTO `utilisateur`(user_name, mdp, nom, prenom, email, role) values ('" + this.usernameTb.Text + "','" + this.mdpTb.Text + "','" + this.nomTB.Text + "','" + this.prenomTB.Text + "','" + this.emailTb.Text + "','" + this.roleLb.Text + "' );";
+                sql = "INSERT INTO `utilisateur`(user_name, mdp, nom, prenom, email, role) values ('" + this.usernameTb.Text + "','" + this.mdpTb.Text + "','" + this.nomTB.Text + "','" + this.prenomTB.Text + "','" + this.emailTb.Text + "','" + this.roleTb.Text + "' );";
                 
                 //This is command class which will handle the query and connection object.  
                 cmd = new MySqlCommand
@@ -66,7 +66,33 @@ namespace L91
 
         private void Modifier_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+
+                //This is my insert query in which i am taking input from the user through windows forms 
+                sql = "UPDATE  `utilisateur` set nom='" + this.nomTB.Text + "',prenom='" + this.prenomTB.Text + "',mdp='" + this.mdpTb.Text + "',user_name='" + this.usernameTb.Text + "',role='" + this.roleTb.Text + "' where id='" + this.IdTb.Text + "';";
+
+                //This is command class which will handle the query and connection object.  
+                cmd = new MySqlCommand
+                {
+                    Connection = con,
+                    CommandText = sql
+                };
+                MySqlDataReader MyReader2;
+                con.Open();
+                MyReader2 = cmd.ExecuteReader();   // Here our query will be executed and data saved into the database.  
+
+                MessageBox.Show("Données modifiées avec succès");
+                while (MyReader2.Read())
+                {
+
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void afficher_Click(object sender, EventArgs e)
@@ -131,32 +157,7 @@ namespace L91
             F.Show();this.Hide();
         }
 
-        private void afficher_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                sql = "SELECT * FROM `utilisateur`";
-                con.Open();
-                cmd = new MySqlCommand
-                {
-                    Connection = con,
-                    CommandText = sql
-                };
-                da = new MySqlDataAdapter
-                {
-                    SelectCommand = cmd
-                };
-                dt = new DataTable();
-                da.Fill(dt);
-
-                dataGridView1.DataSource = dt; // here i have assign dTable object to the dataGridView1 object to display data.               
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         private void UserForm_Load(object sender, EventArgs e)
         {
@@ -185,55 +186,22 @@ namespace L91
             }
         }
 
-        private void ajouter_Click_1(object sender, EventArgs e)
+        
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (e.RowIndex >= 0)
             {
-                //This is my insert query in which i am taking input from the user through windows forms 
-                sql = "INSERT INTO `utilisateur`(user_name, mdp, nom, prenom, email, role) values ('" + this.usernameTb.Text + "','" + this.mdpTb.Text + "','" + this.nomTB.Text + "','" + this.prenomTB.Text + "','" + this.emailTb.Text + "','" + this.roleLb.Text + "' );";
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-                //This is command class which will handle the query and connection object.  
-                cmd = new MySqlCommand
-                {
-                    Connection = con,
-                    CommandText = sql
-                };
-                MySqlDataReader MyReader2;
-                con.Open();
-                MyReader2 = cmd.ExecuteReader();   // Here our query will be executed and data saved into the database.  
-
-                MessageBox.Show("Utilisateur enregistrer avec succes");
-                while (MyReader2.Read())
-                {
-                }
-                con.Close();
-                try
-                {
-                    sql = "SELECT * FROM `utilisateur`";
-                    con.Open();
-                    cmd = new MySqlCommand
-                    {
-                        Connection = con,
-                        CommandText = sql
-                    };
-                    da = new MySqlDataAdapter
-                    {
-                        SelectCommand = cmd
-                    };
-                    dt = new DataTable();
-                    da.Fill(dt);
-
-                    dataGridView1.DataSource = dt; // here i have assign dTable object to the dataGridView1 object to display data.               
-                    con.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                IdTb.Text = row.Cells[0].Value.ToString();
+                usernameTb.Text = row.Cells[1].Value.ToString();
+                nomTB.Text = row.Cells[2].Value.ToString();
+                prenomTB.Text = row.Cells[3].Value.ToString();
+                mdpTb.Text = row.Cells[4].Value.ToString();
+                emailTb.Text = row.Cells[5].Value.ToString();
+                roleTb.Text = row.Cells[6].Value.ToString();
+                
             }
         }
     }

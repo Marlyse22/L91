@@ -20,6 +20,8 @@ namespace L91
         MySqlConnection con = new MySqlConnection("server=sql356.main-hosting.eu; port = 3306;user id=u559094014_latitude91;password=Latitude91;database=u559094014_latitude91;sslMode=none");
         MySqlCommand cmd;
         MySqlDataAdapter da;
+        MySqlDataReader dr;
+       
         DataTable dt;
         string sql;
         int maxrow;
@@ -67,8 +69,8 @@ namespace L91
         {
             try
             {
-                sql = "SELECT * FROM `utilisateur`  WHERE 'id' = 1";
-                con.Open();
+                sql = "SELECT * FROM `utilisateur` WHERE 'ID'= 1";
+                
                 cmd = new MySqlCommand
                 {
                     Connection = con,
@@ -78,18 +80,17 @@ namespace L91
                 {
                     SelectCommand = cmd
                 };
-                dt = new DataTable();
-                da.Fill(dt);
-                maxrow = dt.Rows.Count;
-                if (maxrow > 0)
+                con.Open();
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
                 {
-
-                    tbnom.Text = dt.Rows[0].Field<string>("nom");
-                    tbprenom.Text = dt.Rows[1].Field<string>("prenom");
-                    tbmdp.Text = dt.Rows[2].Field<string>("mdp");
-                    tbemail.Text = dt.Rows[3].Field<string>("email");
-                    tbusername.Text = dt.Rows[4].Field<string>("user_name");
-                    tbrole.Text = dt.Rows[5].Field<string>("role");
+             
+                    tbnom.Text = (dr["nom"].ToString());
+                    tbprenom.Text = (dr["prenom"].ToString());
+                    tbmdp.Text = (dr["mdp"].ToString());
+                    tbemail.Text = (dr["email"].ToString());
+                    tbusername.Text = (dr["user_name"].ToString());
+                    tbrole.Text = (dr["role"].ToString());
                 }
                 con.Close();
             }
