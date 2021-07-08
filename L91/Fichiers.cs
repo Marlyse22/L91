@@ -133,5 +133,10 @@ namespace L91
         {
                 
         }
+
+        private void connexionftp_Click(object sender, EventArgs e)
+        {
+         
+        }
     }
 }
