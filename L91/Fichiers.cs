@@ -15,7 +15,7 @@ namespace L91
     public partial class Fichiers : Form
     {
         /* Create Object Instance */
-        ftp ftpClient = new ftp(@"ftp://ftp.cluster020.hosting.ovh.net", "user", "password");
+        ftp ftpClient = new ftp(@"ftp://ftp.cluster020.hosting.ovh.net/LatitudeFichier", "user", "password");
 
         public Fichiers()
         {
