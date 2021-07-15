@@ -33,6 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Clever Components\Clever Internet Suite\NET\Lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CleverComponents.InetSuite">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Clever Components\Clever Internet Suite\NET\Lib\CleverComponents.InetSuite.dll</HintPath>
+    </Reference>
+    <Reference Include="FTPCom, Version=1.0.998.29091, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\FTPComExe\FTPCom.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Shell32, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Downloads\FTPComExe\Interop.Shell32.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
     </Reference>
@@ -40,6 +56,7 @@
     <Reference Include="MySql.Web, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +92,7 @@
     <Compile Include="Fichiers.Designer.cs">
       <DependentUpon>Fichiers.cs</DependentUpon>
     </Compile>
+    <Compile Include="ftp.cs" />
     <Compile Include="Mesinfos.cs">
       <SubType>Form</SubType>
     </Compile>

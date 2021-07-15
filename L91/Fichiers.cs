@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,62 +14,21 @@ namespace L91
 {
     public partial class Fichiers : Form
     {
+        /* Create Object Instance */
+        ftp ftpClient = new ftp(@"ftp://ftp.cluster020.hosting.ovh.net", "user", "password");
+
         public Fichiers()
         {
             InitializeComponent(); 
         }
-        //private string url = "";
-        private void button1_Click(object sender, EventArgs e)
-        {
-            webBrowser2.GoBack(); 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            webBrowser2.GoForward();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            textBox1.Text = webBrowser2.Url.ToString();
-        }
-
+        
+    
         private void Form1_Load(object sender, EventArgs e)
         {
              
             
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-             
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            webBrowser2.Navigate("ftp.chantpouryehoshoua.com","");
-        }
-
-        private void webBrowser1_NewWindow(object sender, CancelEventArgs e)
-        {
-            //Prevent ftp site openning in new window.
-
-            /*if (url.StartsWith("ftp://"))
-
-            {
-
-                e.Cancel = true;
-
-                this.webBrowser1.Navigate(url);
-
-            }
-            */
-        }
+        
 
         private void button3_Click_1(object sender, EventArgs e)
         {
@@ -124,10 +85,6 @@ namespace L91
             F.Show(); this.Hide();
         }
 
-        private void webBrowser2_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-                 
-        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -136,7 +93,48 @@ namespace L91
 
         private void connexionftp_Click(object sender, EventArgs e)
         {
-         
+            string url = tbhost.Text;
+            string user = tbuser.Text;
+            string password = tbmdp.Text;
+            FtpWebRequest request = (FtpWebRequest)FtpWebRequest.Create(url);
+            request.Method = WebRequestMethods.Ftp.ListDirectory;
+
+            request.Credentials = new NetworkCredential(user, password);
+            request.UsePassive = true;
+            request.UseBinary = true;
+            request.KeepAlive = false;
+
+            try
+            {
+                WebResponse response = (FtpWebResponse)request.GetResponse();
+                MessageBox.Show("connected");
+                Stream responseStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(responseStream);
+
+                while (!reader.EndOfStream)
+                {
+                    Application.DoEvents();
+                    listView1.Items.Add(reader.ReadLine());
+                    
+                    
+                }
+
+                //Clean-up
+                reader.Close();
+                responseStream.Close(); //redundant
+                response.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error connecting to the FTP Server" + ex);
+            }
+        }
+
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

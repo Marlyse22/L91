@@ -73,8 +73,10 @@
             // 
             this.mdpTXT.Location = new System.Drawing.Point(127, 83);
             this.mdpTXT.Name = "mdpTXT";
+            this.mdpTXT.PasswordChar = '*';
             this.mdpTXT.Size = new System.Drawing.Size(157, 22);
             this.mdpTXT.TabIndex = 5;
+            this.mdpTXT.Text = "1234";
             // 
             // usernameTXT
             // 
@@ -82,6 +84,7 @@
             this.usernameTXT.Name = "usernameTXT";
             this.usernameTXT.Size = new System.Drawing.Size(157, 22);
             this.usernameTXT.TabIndex = 4;
+            this.usernameTXT.Text = "benmk";
             // 
             // label2
             // 
